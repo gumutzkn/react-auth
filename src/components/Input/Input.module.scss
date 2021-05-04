@@ -1,0 +1,24 @@
+label {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.form__input {
+  border-radius: 5px;
+  border: 1px solid #41434b;
+  background-color: transparent;
+  color: #5f5f65;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 1.4rem 2rem;
+  margin-bottom: 3rem;
+
+  &:focus {
+    border: 1px solid #656c81;
+    outline: none;
+  }
+}
