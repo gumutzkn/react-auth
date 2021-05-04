@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 
@@ -22,6 +23,12 @@ export default function Form() {
         placeholder="Enter your password"
       />
       <Button value="Login now" />
+      <span>
+        Not registered yet?{" "}
+        <Link>
+          Register <span> &#8594;</span>
+        </Link>
+      </span>
     </form>
   );
 }
