@@ -1,15 +1,15 @@
 import React, { useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import Button from "../Button/Button";
 import Input from "../Input/Input";
-
-import styles from "../../Form.module.scss";
+import Button from "../Button/Button";
 import { useAuth } from "../../contexts/AuthContext";
 
-export default function Login(props) {
+import styles from "../../Form.module.scss";
+
+export default function Signup(props) {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const { login } = useAuth();
+  const { signUp, currentUser } = useAuth();
   const [error, setError] = useState("");
   const history = useHistory();
 
@@ -18,16 +18,16 @@ export default function Login(props) {
 
     try {
       setError("");
-      await login(emailRef.current.value, passwordRef.current.value);
+      await signUp(emailRef.current.value, passwordRef.current.value);
       history.push("/");
     } catch {
-      setError("Failed to log in");
+      setError("Failed to create an account");
     }
   }
 
   return (
     <div className={styles.form__container}>
-      <h3>Welcome Back</h3>
+      <h3>Welcome to My Website</h3>
       <h1>{props.text}</h1>
       {error && <h1 className={styles.error}>{error}</h1>}
 
@@ -46,11 +46,11 @@ export default function Login(props) {
           refs={passwordRef}
           placeholder="Enter your password"
         />
-        <Button value="Login now" />
+        <Button value="Sign Up" />
         <span>
-          Not registered yet?{" "}
-          <Link to="/signup">
-            Register <span> &#8594;</span>
+          Already have an account?{" "}
+          <Link to="/login">
+            Login <span> &#8594;</span>
           </Link>
         </span>
       </form>

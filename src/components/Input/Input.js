@@ -6,17 +6,17 @@ export default function Input({
   htmlFor,
   label,
   placeholder,
-  name,
   type,
+  refs,
 }) {
   return (
     <>
       <label htmlFor={htmlFor}>{label}</label>
       <input
         placeholder={placeholder}
-        name={name}
         className={styles.form__input}
         type={type}
+        ref={refs}
       />
     </>
   );
